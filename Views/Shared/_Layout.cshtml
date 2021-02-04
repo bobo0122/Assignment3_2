@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/main.css" rel="stylesheet" />
+
+</head>
+<body>
+    <header>
+        <h1>@ViewBag.Title</h1>
+        <menu>
+            <ul>
+                <li><a asp.controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp.controller="Home" asp-action="MyPodcasts">My Podcasts</a></li>
+                <li><a asp.controller="Home" asp-action="EnterMovie">Submit a Movie</a></li>
+
+            </ul>
+        </menu>
+
+    </header>
+    @RenderBody()
+
+    <footer>
+        <p>Author: Bobo Choi</p>
+        <p><a href="mailto:bobo0122choi@gmail.com">bobo0122choi@gmail.com</a></p>
+    </footer>
+    <!--<script src="~/js/jquery.min.js"></script>-->
+    <script src="~/js/message.js"></script>
+
+</body>
+</html>
