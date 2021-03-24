@@ -8,6 +8,8 @@ namespace Assignment3_2.Models
 {
     public class ApplicationResponse
     {
+        [Key]
+        public int MovieId { get; set; }
 
         [Required]
         public string Category { get; set; }

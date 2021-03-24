@@ -9,10 +9,11 @@
     ViewBag.Title = "Movie List";
 
 }
-@model IEnumerable<Assignment3_2.Models.ApplicationResponse>
+@model Assignment3_2.Models.ViewModels.MovieViewModel
 
-<div>
-    <h2>Here are the submitted movies.</h2>    <table>
+<div class="col-3">
+    <h5>Here are the submitted movies.</h5>    
+    <table  class="table table-striped">
         <thead>
             <tr>
                 <th>Category</th>
@@ -23,24 +24,34 @@
                 <th>Edited</th>
                 <th>Lent To:</th>
                 <th>Notes</th>
+                <th>Update</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
-           
-                    @foreach (Assignment3_2.Models.ApplicationResponse y in Model)
-                    {
-                    <tr>
-                        <td>@y.Category</td>
-                        <td>@y.Title</td>
-                        <td>@y.Year</td>
-                        <td>@y.Director</td>
-                        <td>@y.SelectRatingType</td>
-                        <td>@y.Edited</td>
-                        <td>@y.LentTo</td>
-                        <td>@y.Notes</td>
-                    </tr>
-                }
-              
-        </tbody>
+
+            @foreach (var y in Model.ApplicationResponses)
+            {
+                
+            <tr>
+                <td>@y.Category</td>
+                <td>@y.Title</td>
+                <td>@y.Year</td>
+                <td>@y.Director</td>
+                <td>@y.SelectRatingType</td>
+                <td>@y.Edited</td>
+                <td>@y.LentTo</td>
+                <td>@y.Notes</td>
+                <td><a asp-action="Update" asp-route-moviename="@y.Title">Update</a></td>
+                <td>
+                    <form asp-action="Delete" method="post">
+                        <input type="hidden" name="moviename" value="@y.Title" />
+                        <button class="btn-primary" type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+             }
+
+            </tbody>
     </table>
 </div>

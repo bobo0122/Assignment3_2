@@ -3,31 +3,67 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-    <link href="~/css/main.css" rel="stylesheet" />
-
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="~/css/site.css" />-->
+    <style>
+        #footer {
+            position: fixed;
+            padding: 10px 10px 0px 10px;
+            bottom: 0;
+            width: 100%;
+            /* Height of the footer*/
+            height: 40px;
+            background: grey;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>@ViewBag.Title</h1>
-        <menu>
-            <ul>
-                <li><a asp.controller="Home" asp-action="Index">Home</a></li>
-                <li><a asp.controller="Home" asp-action="MyPodcasts">My Podcasts</a></li>
-                <li><a asp.controller="Home" asp-action="EnterMovie">Submit a Movie</a></li>
+   
+       
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">The Joel Hilton Film Collection</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
 
-            </ul>
-        </menu>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="MyPodcasts">My Podcasts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="EnterMovie">Submit a Movie</a>
+                        </li>
 
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="MoviesList">Movie List</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
     @RenderBody()
-
-    <footer>
-        <p>Author: Bobo Choi</p>
-        <p><a href="mailto:bobo0122choi@gmail.com">bobo0122choi@gmail.com</a></p>
+<div id="footer">
+    <footer class="align-items-md-end mt-auto">
+        <div class="container text-center">
+            <p>Author: Bobo Choi | <a href="mailto:bobo0122choi@gmail.com">bobo0122choi@gmail.com</a></p>
+         
+        </div>
     </footer>
-    <!--<script src="~/js/jquery.min.js"></script>-->
-    <script src="~/js/message.js"></script>
-
+</div>
+   
+   
 </body>
 </html>
